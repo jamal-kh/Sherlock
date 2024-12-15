@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Voynich Manuscript</title>
+    <link rel="stylesheet" href="./styles/mystery.css">
+    <link rel="stylesheet" href="./styles/navBar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="./assets/download.jpg" alt="Logo"></div>
+        <button class="menu" aria-label="Main Menu">
+            <svg width="30" height="30" viewBox="0 0 100 100">
+                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                <path class="line line2" d="M 20,50 H 80" />
+                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+            </svg>
+        </button>
+        <ul class="nav-links" id="navLink">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="stats-banner">
+        <div class="stat-item">
+            <div class="stat-number">2,547</div>
+            <div>Total Readers</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">45%</div>
+            <div>Solve Rate</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">873</div>
+            <div>Active Theories</div>
+        </div>
+    </div>
+
+    <main class="mystery-container">
+        <article class="mystery-header">
+            <h1>The Voynich Manuscript</h1>
+            <div>
+                <span class="difficulty-badge">Medium Difficulty</span>
+                <div class="solve-status">Status: Unsolved</div>
+            </div>
+            <img src="./assets/img/The Anonymous Bank Robber.jpg" alt="The Anonymous Bank Robber" style="width: 100%; margin: 1rem 0;">
+            
+            <div class="progress-section">
+                <h3>Community Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </article>
+
+        <section class="mystery-content">
+            <h2>The Mystery</h2>
+            <p>Recently, Patrick learned something about a friend in the group -- one of the old men had been a bank robber in the 1930s. He had spent time in a federal penitentiary. Patrick learned of this from an anonymous letter sent to him by the guilty party. In the letter, the friend detailed his life of crime in the desperate days of the dust bowl and depression era, emphasizing that nobody had ever been harmed during the course of his criminal activities. The letter writer insisted that he wouldn’t have committed such crimes under normal circumstances, but his family had been suffering from extreme deprivation and starvation on the meager family farm. He had no choice. The writer offered, “Life was very grim. All of our cattle and horses died of exposure and disease, and crops were scarce during the dust bowl years.” He also wrote that, although he had served prison time, he still felt guilt and remorse over his actions. Thus, he wanted to come clean with his oldest and closest friends. “But first,” he had written, “let’s gather and see if you and our friends can figure out who wrote this letter. Guys our age can use the mental exercise.”</p>
+            
+            <div class="reaction-buttons">
+                <button class="reaction-btn">🤔 Intriguing</button>
+                <button class="reaction-btn">💡 Theory</button>
+                <button class="reaction-btn">🔍 Need More Info</button>
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <h2>Community Discussion</h2>
+            <form class="comment-form">
+                <textarea placeholder="Share your thoughts or theories..." rows="4"></textarea>
+                <button type="submit" class="submit-btn">Post Comment</button>
+            </form>
+
+            <div class="comments">
+                <div class="comment">
+                    <strong>Detective Smith</strong>
+                    <p>This was  amazing!</p>
+                    <small>Posted 2 hours ago</small>
+                </div>
+                <div class="comment">
+                    <strong>History Buff</strong>
+                    <p>Good Mystery</p>
+                    <small>Posted 5 hours ago</small>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mystery Explorer. All rights reserved.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+    <script>
+        // Add interactivity to reaction buttons
+        document.querySelectorAll('.reaction-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.background = '#2c3e50';
+                this.style.color = 'white';
+            });
+        });
+
+        // Simple comment form handling
+        document.querySelector('.comment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const textarea = this.querySelector('textarea');
+            if (textarea.value.trim()) {
+                const newComment = document.createElement('div');
+                newComment.className = 'comment';
+                newComment.innerHTML = `
+                    <strong>Guest User</strong>
+                    <p>${textarea.value}</p>
+                    <small>Posted just now</small>
+                `;
+                document.querySelector('.comments').prepend(newComment);
+                textarea.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

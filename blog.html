@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./styles/navBar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="./assets/download.jpg" alt="Logo"></div>
+        <button class="menu" aria-label="Main Menu">
+            <svg width="30" height="30" viewBox="0 0 100 100">
+                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                <path class="line line2" d="M 20,50 H 80" />
+                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+            </svg>
+        </button>
+        <ul class="nav-links" id="navLink">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main class="blog-posts">
+            <!-- Blog Post 1 -->
+            <article class="blog-post">
+                <img src="./assets/img/Voynich Manuscript Case.jpg" alt="Blog Post" class="post-image" loading="lazy">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Historical Mystery</span>
+                        <span>April 15, 2024</span>
+                    </div>
+                    <h2 class="post-title">New Evidence in the Voynich Manuscript Case</h2>
+                    <p class="post-excerpt">Recent discoveries using advanced imaging techniques have revealed previously unseen details in the mysterious Voynich Manuscript, potentially bringing us closer to understanding its origins...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-post">
+                <img src="./assets/img/Dancing Lights.jpg" alt="Blog Post" class="post-image" loading="lazy">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Supernatural</span>
+                        <span>April 12, 2024</span>
+                    </div>
+                    <h2 class="post-title">The Mystery of the Dancing Lights</h2>
+                    <p class="post-excerpt">A small town in Norway has been experiencing unexplained luminous phenomena in the night sky, distinct from the usual aurora borealis...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-post">
+                <img src="./assets/img/The Quantum Mystery.jpg" alt="Blog Post" class="post-image" loading="lazy">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-category">Scientific</span>
+                        <span>April 10, 2024</span>
+                    </div>
+                    <h2 class="post-title">The Quantum Mystery That Puzzles Scientists</h2>
+                    <p class="post-excerpt">A new quantum phenomenon has been observed in laboratories worldwide, challenging our understanding of particle physics...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link">Next →</a>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <!-- Search Widget -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Search</h3>
+                <form class="search-form">
+                    <input type="search" class="search-input" placeholder="Search mysteries...">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Categories</h3>
+                <ul class="categories-list">
+                    <li><a href="#">Historical Mysteries <span>(15)</span></a></li>
+                    <li><a href="#">Supernatural Events <span>(12)</span></a></li>
+                    <li><a href="#">Scientific Anomalies <span>(8)</span></a></li>
+                    <li><a href="#">Unsolved Cases <span>(20)</span></a></li>
+                    <li><a href="#">Cryptography <span>(6)</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Popular Posts Widget -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Popular Posts</h3>
+                <ul class="popular-posts">
+                    <li class="popular-post">
+                        <img src="./assets/img/The Lost City of Atlantis.jpg" alt="Popular Post">
+                        <div class="popular-post-info">
+                            <h4>The Lost City of Atlantis</h4>
+                            <span>April 8, 2024</span>
+                        </div>
+                    </li>
+                    <li class="popular-post">
+                        <img src="./assets/img/Mystery of the Bermuda Triangle.jpg" alt="Popular Post">
+                        <div class="popular-post-info">
+                            <h4>Mystery of the Bermuda Triangle</h4>
+                            <span>April 5, 2024</span>
+                        </div>
+                    </li>
+                    <li class="popular-post">
+                        <img src="./assets/img/The Tunguska Event.jpg" alt="Popular Post">
+                        <div class="popular-post-info">
+                            <h4>The Tunguska Event</h4>
+                            <span>April 1, 2024</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tags Widget -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Tags</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">Historical</a>
+                    <a href="#" class="tag">Supernatural</a>
+                    <a href="#" class="tag">Science</a>
+                    <a href="#" class="tag">Ancient</a>
+                    <a href="#" class="tag">Unsolved</a>
+                    <a href="#" class="tag">Cryptography</a>
+                    <a href="#" class="tag">Investigation</a>
+                    <a href="#" class="tag">Evidence</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; 2024 Mystery Explorer. All rights reserved.</p>
+    </footer>
+    <script src="./app.js"></script>
+    <script>
+        // Add hover effect to blog posts
+        document.querySelectorAll('.blog-post').forEach(post => {
+            post.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            post.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Search form handling
+        document.querySelector('.search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchTerm = this.querySelector('.search-input').value;
+            console.log('Searching for:', searchTerm);
+        });
+
+        // Tag click handling
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Tag clicked:', this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
