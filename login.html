@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sign In</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f8f9fa;
+            margin: 0;
+        }
+        .sign-in-container {
+            max-width: 700px;
+            width: 400px;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .sign-in-container h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .btn-google {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+        }
+        .btn-google:hover {
+            background-color: #357ae8;
+        }
+        .back-arrow {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            display: block;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            width: 40px;
+            height: 40px;
+        }
+        .back-arrow:hover {
+            background-color: #969696;
+        }
+    </style>
+</head>
+<body>
+    <div class="sign-in-container">
+        <!-- Back Arrow -->
+        <button class="back-arrow" onclick="history.back()" aria-label="Go back">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <div>
+            <h1>Sign In</h1>
+        <div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            </div>
+            <button  id="loginBtn" class="btn btn-primary w-100 mb-3">Sign In</button>
+        </div>
+        <div class="text-center mt-3">
+            <small>
+                Don't have an account? <a href="./register.html" class="text-primary">Register here</a>.
+            </small>
+        </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/login.js" type="module"></script>
+</body>
+</html>

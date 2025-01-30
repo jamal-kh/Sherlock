@@ -18,7 +18,7 @@ body {
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/img/sherlock.jpg") center/cover;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +26,6 @@ body {
     text-align: center;
     color: #fff;
     padding: 0 1rem;
-    margin-top: 60px;
 }
 
 .hero h1 {
@@ -40,57 +39,14 @@ body {
     max-width: 600px;
 }
 
-/* Search and Filter Section */
-.search-filter-container {
-    padding: 2rem 5%;
-    background: var(--light-bg);
-}
-
-.search-filters {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.search-input {
-    padding: 0.8rem 1.5rem;
-    width: 300px;
-    border: 2px solid #ddd;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-}
-
-.filter-select {
-    padding: 0.8rem;
-    border: 2px solid #ddd;
-    border-radius: var(--border-radius);
-    background: white;
-    min-width: 150px;
-}
 
 /* Stats Section */
-.mystery-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    padding: 3rem 5%;
-    background: white;
-    text-align: center;
-}
-
-.stat-item {
-    padding: 1rem;
-}
-
 .stat-number {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--primary-color);
-    display: block;
+    color: #0d6efd;
+    display: flex;
+    flex-direction: column;
 }
 
 .stat-label {
@@ -98,16 +54,17 @@ body {
     font-size: 1.1rem;
 }
 
-/* Top Players Section */
-.top-players {
-    background: linear-gradient(135deg, var(--secondary-color), #2a2a2a);
-    padding: 4rem 5%;
-    color: white;
+.mystery-stats {
+    background: white;
+    padding: 3rem 5%;
 }
 
-.top-players-content {
-    max-width: 1400px;
-    margin: 0 auto;
+/* Top Players Section */
+.top-players {
+    background: linear-gradient(135deg, #6c757d, #2a2a2a);
+    /* Adjusted secondary color */
+    padding: 4rem 5%;
+    color: white;
 }
 
 .section-title {
@@ -117,24 +74,16 @@ body {
     color: white;
 }
 
-.players-flex-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
 .player-card {
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
     background: rgba(255, 255, 255, 0.1);
+    height: 450px;
     backdrop-filter: blur(10px);
-    border-radius: var(--border-radius);
+    border-radius: 0.75rem;
     padding: 2rem;
     text-align: center;
     position: relative;
     transition: transform 0.3s ease;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .player-card:hover {
@@ -154,6 +103,8 @@ body {
     justify-content: center;
     font-weight: bold;
     font-size: 1.2rem;
+    background: white;
+    color: black;
 }
 
 .first-place {
@@ -189,21 +140,15 @@ body {
     border-radius: 50%;
     margin: 1rem auto;
     object-fit: cover;
-    border: 4px solid var(--primary-color);
-}
-
-.player-details h3 {
-    color: white;
-    margin: 1rem 0;
-    font-size: 1.4rem;
+    border: 4px solid #0d6efd;
+    /* Bootstrap primary color */
 }
 
 .player-stats {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
-    margin: 1rem 0;
+    gap: 10px;
 }
 
 .player-stats span {
@@ -211,6 +156,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
+    display: inline-block;
 }
 
 .player-bio {
@@ -223,149 +169,77 @@ body {
 /* Featured Mystery Section */
 .featured-mystery {
     padding: 4rem 5%;
-    background: var(--light-bg);
-}
-
-.featured-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    background: #f8f9fa; /* Bootstrap light background */
 }
 
 .featured-image {
     width: 100%;
-    border-radius: var(--border-radius);
+    border-radius: 0.75rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .featured-text {
-    padding: 2rem;
+    padding: 1rem 0;
 }
 
 .featured-button {
     display: inline-block;
-    padding: 1rem 2rem;
-    background: var(--primary-color);
+    padding: 0.8rem 2rem;
+    background: #0d6efd; /* Bootstrap primary color */
     color: white;
     text-decoration: none;
-    border-radius: var(--border-radius);
+    border-radius: 0.5rem;
     margin-top: 1rem;
     transition: background-color 0.3s ease;
 }
 
-/* Mystery Grid */
-.mystery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 5%;
-    max-width: 1400px;
-    margin: 0 auto;
+.featured-button:hover {
+    background: #084298; /* Darker primary color */
 }
 
+/* Mystery Grid */
 .mystery-card {
     background: white;
-    border-radius: var(--border-radius);
+    border-radius: 0.5rem;
+    height: 230px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.mystery-card div {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
+.mystery-card h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Newsletter Section */
+.mystery-card p{
+    height: 80px;
+    overflow: hidden;
+}
+.mystery-card:hover {
+    transform: translateY(-5px);
+}
+
 .newsletter {
-    background: var(--secondary-color);
+    background: rgb(33, 37, 41); /* Bootstrap secondary color */
     color: white;
-    padding: 4rem 5%;
     text-align: center;
-}
-
-.newsletter-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.newsletter-form {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    justify-content: center;
 }
 
 .newsletter-input {
-    padding: 1rem;
-    width: 300px;
-    border-radius: var(--border-radius);
-    border: none;
+    border-radius: 0.5rem;
 }
 
 .newsletter-button {
-    padding: 1rem 2rem;
-    background: var(--primary-color);
+    background: #0d6efd; /* Bootstrap primary color */
     color: white;
     border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-}
-
-/* Testimonials Section */
-.testimonials {
-    padding: 4rem 5%;
-    background: white;
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto 0;
+    border-radius: 0.5rem;
 }
 
 .testimonial-card {
-    background: var(--light-bg);
+    background: #f8f9fa; /* Bootstrap light background */
+    border-radius: 0.5rem;
     padding: 2rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .featured-content {
-        grid-template-columns: 1fr;
-    }
-
-    .newsletter-form {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .newsletter-input {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .search-filters {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .player-card {
-        flex: 0 1 100%;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
 }

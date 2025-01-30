@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detective Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./components/navbar.js" type="module" defer></script>
+    <style>
+        :root {
+            --main-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        }
+
+        body {
+            background: #f5f6fa;
+            min-height: 100vh;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .profile-header {
+            background: var(--bg-gradient);
+            height: 200px;
+            position: relative;
+        }
+
+        .avatar-edit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .avatar-edit:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .rank-badge {
+            background: var(--accent-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            height: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .progress-ring {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .edit-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            backdrop-filter: blur(5px);
+        }
+
+        .case-history {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+        <!-- Navigation -->
+    <div id="navbarCom"></div>
+    <div class="container py-5">
+        <div class="profile-card">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <button class="btn btn-light edit-btn" data-bs-toggle="modal" data-bs-target="#editModal">
+                    ✎ Edit
+                </button>
+                <span class="rank-badge text-white">🥇 Rank #1</span>
+                <div class="avatar-edit">
+                    <img src="https://i.haberglobal.com.tr/rcman/Cw1230h692q95gm/storage/files/images/2024/08/27/sherlock-holmes-neden-oldu-yaniti-yazarindan-geldi-tjlw.jpg" 
+                         class="profile-avatar rounded-circle" 
+                         alt="Profile"
+                         id="profileAvatar"
+                         data-bs-toggle="modal" 
+                         data-bs-target="#avatarModal">
+                    <input type="file" id="avatarInput" hidden accept="image/*">
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="p-4 pt-5 text-center">
+
+                <h2 class="mt-4 mb-0" id="userName">Sherlock Holmes</h2>
+                <p class="text-muted">Master Detective</p>
+
+                <!-- Stats Grid -->
+                <div class="row g-4 mt-4">
+                    <div class="col-md-4">
+                        <div class="stats-card">
+                            <div>
+                                <h5>🔍 Cases Solved</h5>
+                                <h2 class="text-main">247</h2>
+                                <div class="text-muted small">+12 this month</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="stats-card">
+                            <div>
+                                <h5>🏆 Success Rate</h5>
+                                <div class="d-flex justify-content-center position-relative">
+                                    <svg class="progress-ring">
+                                        <circle class="ring-bg" stroke="#eee" stroke-width="8" fill="transparent" r="40" cx="50" cy="50"/>
+                                        <circle class="ring-progress" stroke="var(--accent-color)" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="37.68" fill="transparent" r="40" cx="50" cy="50"/>
+                                    </svg>
+                                    <span class="position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%)">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="stats-card">
+                            <div>
+                                <h5>⭐ Rating</h5>
+                                <div class="display-4 text-warning">4.9</div>
+                                <div class="small text-muted">345 reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case History -->
+                <div class="mt-5 text-start case-history">
+                    <h4 class="mb-4">Recent Cases</h4>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex justify-content-between">
+                                <span>The Baskerville Mystery</span>
+                                <span class="badge bg-success">Solved</span>
+                            </div>
+                            <small class="text-muted">Completed 2 days ago</small>
+                        </a>
+                        <!-- Add more cases -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="profileForm">
+                        <div class="mb-4">
+                            <label class="form-label">Display Name</label>
+                            <input type="text" class="form-control form-control-lg" 
+                                   value="Sherlock Holmes" 
+                                   id="nameInput">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Profile Image</label>
+                            <input type="file" class="form-control" 
+                                   id="avatarUpload" 
+                                   accept="image/*">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveProfile">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Avatar Update
+        document.getElementById('avatarUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profileAvatar').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Name Update
+        document.getElementById('saveProfile').addEventListener('click', function() {
+            const newName = document.getElementById('nameInput').value;
+            document.getElementById('userName').textContent = newName;
+            bootstrap.Modal.getInstance(document.getElementById('editModal')).hide();
+        });
+    </script>
+</body>
+</html>
